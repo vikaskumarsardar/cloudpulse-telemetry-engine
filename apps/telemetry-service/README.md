@@ -4,6 +4,23 @@ High-Throughput Telemetry Ingestion Microservice & Real-Time WebSocket Broadcast
 
 ---
 
+## 📡 Passive Kafka CDC Integration
+
+The microservice includes a **Passive Kafka Consumer (`kafkajs`)** that listens asynchronously to Debezium Write-Ahead Log (WAL) outbox events on topic `dbserver1.public.outbox`.
+
+### ⚙️ Environment Variables
+
+| Variable Name | Default Value | Description |
+| :--- | :--- | :--- |
+| `PORT` | `4001` | Express & WebSocket HTTP server port |
+| `KAFKA_BROKERS` | `localhost:9092` | Comma-separated Kafka KRaft broker addresses |
+| `KAFKA_TOPIC_OUTBOX` | `dbserver1.public.outbox` | Topic name for transactional outbox CDC events |
+
+### 🛡️ Automatic Fallback Mode
+If Kafka brokers are offline or unreachable during local UI development, `telemetry-service` logs a warning and automatically operates in **standalone dynamic tick simulation mode** so local development is never blocked.
+
+---
+
 ## 🔌 API Specification
 
 ### HTTP API Endpoints
@@ -25,6 +42,8 @@ High-Throughput Telemetry Ingestion Microservice & Real-Time WebSocket Broadcast
 ---
 
 ## 🧪 Testing
+
+Run Node.js native unit tests (`node:test`):
 
 ```bash
 npm test
