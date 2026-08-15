@@ -1,0 +1,17 @@
+{
+  "name": "cloudpulse-telemetry-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Microservices Telemetry Engine & Real-Time Next.js Shadcn Recharts Observability Dashboard",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:dashboard": "npm run dev --workspace=web-dashboard",
+    "build:dashboard": "npm run build --workspace=web-dashboard",
+    "start:dashboard": "npm run start --workspace=web-dashboard",
+    "start:telemetry": "npm run start --workspace=telemetry-service",
+    "test:telemetry": "npm run test --workspace=telemetry-service"
+  }
+}
