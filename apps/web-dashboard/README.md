@@ -2,6 +2,8 @@
 
 Next.js 14 App Router Telemetry Visualization Dashboard.
 
+🌐 **Live Vercel Production Deployment**: [https://cloudpulse-telemetry-engine-telemet.vercel.app/](https://cloudpulse-telemetry-engine-telemet.vercel.app/)
+
 ---
 
 ## 🎨 UI Features

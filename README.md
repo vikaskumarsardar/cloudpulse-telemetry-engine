@@ -2,10 +2,13 @@
 
 > **High-Throughput Microservice Observability & Real-Time Telemetry Dashboard Engine**
 
+[![Vercel Live Demo](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://cloudpulse-telemetry-engine-telemet.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?logo=next.js)](https://nextjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?logo=node.js)](https://nodejs.org/)
 [![Kafka](https://img.shields.io/badge/Kafka-KRaft-red?logo=apachekafka)](https://kafka.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+🌐 **Live Vercel Production Dashboard**: [https://cloudpulse-telemetry-engine-telemet.vercel.app/](https://cloudpulse-telemetry-engine-telemet.vercel.app/)
 
 **CloudPulse Telemetry Engine** is an enterprise-grade monorepo telemetry engine designed to passively monitor transactional Change Data Capture (CDC) outbox pipelines, $p_{50}/p_{95}/p_{99}$ SLA percentiles, and partition lag across microservices with **0ms user latency overhead**.
 
