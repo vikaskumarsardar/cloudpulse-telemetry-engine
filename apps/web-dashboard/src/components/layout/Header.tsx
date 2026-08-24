@@ -14,17 +14,31 @@ export function Header({ onMobileMenuToggle, isMobileMenuOpen }: HeaderProps) {
 
   useEffect(() => {
     setMounted(true);
+    const savedTheme = localStorage.getItem("cloudpulse-theme");
+    if (savedTheme === "light") {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    } else if (savedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("cloudpulse-theme", "dark");
+    }
   }, []);
 
-  useEffect(() => {
-    if (mounted) {
-      if (isDark) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+  const toggleTheme = () => {
+    const nextDarkState = !isDark;
+    setIsDark(nextDarkState);
+    if (nextDarkState) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("cloudpulse-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("cloudpulse-theme", "light");
     }
-  }, [isDark, mounted]);
+  };
 
   const isDarkModeActive = mounted && isDark;
 
@@ -61,7 +75,7 @@ export function Header({ onMobileMenuToggle, isMobileMenuOpen }: HeaderProps) {
         {/* Dark/Light Mode Button */}
         <button
           type="button"
-          onClick={() => setIsDark(!isDark)}
+          onClick={toggleTheme}
           aria-label={isDarkModeActive ? "Switch to Light Mode" : "Switch to Dark Mode"}
           className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-zinc-400 transition-colors hover:bg-slate-100 dark:hover:bg-zinc-800 hover:text-slate-900 dark:hover:text-zinc-100 focus-visible:ring-2 focus-visible:ring-blue-500"
         >
