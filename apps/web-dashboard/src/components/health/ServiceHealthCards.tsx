@@ -16,7 +16,7 @@ export function ServiceHealthCards({ services }: ServiceHealthCardsProps) {
   };
 
   return (
-    <section aria-label="Cluster Services Health" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section aria-label="Cluster Services Health" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
       {services.map((svc) => (
         <Card key={svc.serviceName} role="region" ariaLabel={`${svc.serviceName} Status`}>
           <div className="flex items-center justify-between">

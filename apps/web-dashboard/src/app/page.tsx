@@ -51,7 +51,7 @@ export default function DashboardPage() {
           onMobileClose={() => setIsMobileMenuOpen(false)}
         />
 
-        <main className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 min-w-0 overflow-y-auto">
+        <main className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 min-w-0 overflow-y-auto overflow-x-hidden">
           {!mounted ? (
             <DashboardSkeleton />
           ) : (
@@ -189,17 +189,7 @@ export default function DashboardPage() {
 
               {/* Lower Section: Live Console & Health */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 min-w-0">
-                <div className="lg:col-span-2 glass-card rounded-xl p-4 sm:p-5 shadow-sm shadow-slate-200/50 dark:shadow-black/40 min-w-0">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-zinc-800 mb-4">
-                    <div>
-                      <h3 className="text-sm font-bold tracking-tight text-slate-900 dark:text-zinc-100">
-                        CDC Outbox Live Event Console
-                      </h3>
-                      <p className="text-[11px] font-medium text-slate-500 dark:text-zinc-400">
-                        Real-time streaming event log audit
-                      </p>
-                    </div>
-                  </div>
+                <div className="lg:col-span-2 min-w-0">
                   <LiveLogConsole logs={consoleLogs} />
                 </div>
 
