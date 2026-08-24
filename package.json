@@ -8,9 +8,11 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "npm run build --workspaces --if-present",
     "dev:dashboard": "npm run dev --workspace=web-dashboard",
     "build:dashboard": "npm run build --workspace=web-dashboard",
     "start:dashboard": "npm run start --workspace=web-dashboard",
+    "build:telemetry": "npm run build --workspace=telemetry-service --if-present",
     "start:telemetry": "npm run start --workspace=telemetry-service",
     "test:telemetry": "npm run test --workspace=telemetry-service"
   }
