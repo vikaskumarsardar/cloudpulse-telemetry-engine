@@ -14,18 +14,7 @@ export function Header({ onMobileMenuToggle, isMobileMenuOpen }: HeaderProps) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("cloudpulse-theme");
-    if (savedTheme === "light") {
-      setIsDark(false);
-      document.documentElement.classList.remove("dark");
-    } else if (savedTheme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("cloudpulse-theme", "dark");
-    }
+    setIsDark(document.documentElement.classList.contains("dark"));
   }, []);
 
   const toggleTheme = () => {
